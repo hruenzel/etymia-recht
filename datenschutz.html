@@ -69,10 +69,17 @@ footer { margin-top: 48px; color: var(--muted); font-size: 13px;
 <p>Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Erfüllung des Nutzungsvertrags). Für den Einwilligungs-Zeitpunkt zusätzlich Art. 7 Abs. 1 DSGVO (Nachweispflicht).</p>
 <p>Diese Daten verlassen dein Gerät nicht, solange du die Online-Funktionen nicht nutzt. Deinstallierst du die App, werden sie mit gelöscht.</p>
 <h2>4. ONLINE-FUNKTIONEN UND DIE DABEI VERARBEITETEN DATEN</h2>
-<h3>4.1 Anonymes Konto</h3>
-<p>Damit Spielstand-Sicherung, Ranglisten und Duelle überhaupt einem Gerät zugeordnet werden können, legt die App beim ersten Start automatisch ein anonymes Konto bei unserem Backend-Dienstleister an. Dabei entsteht eine zufällige Kennnummer (UUID). Diese Kennnummer enthält keinen Bezug zu deiner Person, deinem Namen oder deiner Gerätekennung.</p>
+<h3>4.1 Konto und Anmeldung</h3>
+<p>Damit Spielstand-Sicherung, Ranglisten und Duelle überhaupt zugeordnet werden können, braucht die App ein Konto bei unserem Backend-Dienstleister. Beim ersten Start hast du die Wahl:</p>
+<p>a) Ohne Konto starten (anonym)</p>
+<p>Die App legt ein anonymes Konto an. Dabei entsteht nur eine zufällige Kennnummer (UUID) ohne Bezug zu deiner Person, deinem Namen oder deiner Gerätekennung.</p>
 <p>Verarbeitete Daten: zufällige Konto-ID, Erstellungszeitpunkt sowie die technisch bei jeder Verbindung anfallende IP-Adresse.</p>
-<p>Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO.</p>
+<p>b) Anmeldung mit Apple</p>
+<p>Meldest du dich mit Apple an, bestätigt Apple uns gegenüber deine Identität und übermittelt uns eine dauerhafte Kennnummer sowie deine E-Mail-Adresse. Dein Fortschritt bleibt dadurch auch bei einem Gerätewechsel erhalten.</p>
+<p>Du entscheidest dabei selbst, ob wir deine echte E-Mail-Adresse erhalten: Wählst du in Apples Dialog "E-Mail-Adresse verbergen", bekommen wir nur eine Weiterleitungsadresse von Apple (@privaterelay.appleid.com). Deinen Namen fragen wir bei Apple nicht ab – deinen Anzeigenamen wählst du im nächsten Schritt selbst.</p>
+<p>Verarbeitete Daten: Apple-Kennnummer, E-Mail-Adresse (ggf. als Weiterleitungsadresse), Zeitpunkt der Anmeldung, IP-Adresse.</p>
+<p>Die Anmeldung selbst wickelt Apple ab; welche Daten Apple dabei zu eigenen Zwecken verarbeitet, richtet sich nach Apples Datenschutzerklärung.</p>
+<p>Rechtsgrundlage für a) und b): Art. 6 Abs. 1 lit. b DSGVO.</p>
 <h3>4.2 Konto mit E-Mail-Adresse (freiwillig)</h3>
 <p>Du kannst dein Konto freiwillig mit einer E-Mail-Adresse sichern, um deinen Fortschritt auf ein neues Gerät zu übertragen. Dazu senden wir dir einen einmaligen Anmeldecode an die angegebene Adresse. Ein Passwort wird nicht gesetzt und nicht gespeichert.</p>
 <p>Verarbeitete Daten: E-Mail-Adresse, Zeitpunkt der Bestätigung.</p>
@@ -110,11 +117,12 @@ footer { margin-top: 48px; color: var(--muted); font-size: 13px;
 <p>Wir geben Daten nur an sorgfältig ausgewählte Dienstleister weiter, die für uns als Auftragsverarbeiter nach Art. 28 DSGVO tätig sind und vertraglich an unsere Weisungen gebunden sind:</p>
 <p>(a) Supabase, Inc. – Betrieb der Datenbank, der Konten und der Online- Funktionen (Ziffern 4.1 bis 4.7). Speicherort: Frankfurt am Main, Deutschland (Europäische Union).</p>
 <p>(b) Functional Software, Inc. (Sentry) – Absturz- und Fehlerberichte (Ziffer 4.8). Speicherort: Frankfurt am Main, Deutschland (Europäische Union).</p>
-<p>(c) Apple – Bereitstellung der App über den App Store. Die Verarbeitung durch Apple erfolgt in eigener Verantwortung nach den Bestimmungen von Apple.</p>
-<p>Wir haben für beide Dienste bewusst europäische Serverstandorte gewählt. Deine Daten werden daher in Frankfurt am Main gespeichert und dort auch überwiegend verarbeitet.</p>
+<p>(c) Apple – Bereitstellung der App über den App Store sowie, falls du sie nutzt, die Anmeldung mit Apple (Ziffer 4.1 b). Apple verarbeitet diese Daten in eigener Verantwortung nach den Bestimmungen von Apple und ist insoweit nicht unser Auftragsverarbeiter.</p>
+<p>Für Supabase und Sentry haben wir bewusst europäische Serverstandorte gewählt. Deine Spiel- und Kontodaten werden daher in Frankfurt am Main gespeichert und dort auch überwiegend verarbeitet.</p>
 <h2>6. ÜBERMITTLUNG IN DRITTLÄNDER</h2>
 <p>Vollständig ausschließen können wir eine Verarbeitung außerhalb der EU dennoch nicht, und wir wollen an dieser Stelle ehrlich sein: Supabase und Sentry sind US-amerikanische Unternehmen und setzen ihrerseits Unterauftragsverarbeiter ein, die überwiegend in den USA ansässig sind – darunter Amazon Web Services, Google, Cloudflare und Postmark (Versand der Anmelde-E-Mails aus Ziffer 4.2). Im Rahmen von Wartung, Support und Störungsbehebung kann es daher zu einem Zugriff aus einem Drittland kommen.</p>
 <p>Diese Übermittlungen sind durch die von der Europäischen Kommission erlassenen Standardvertragsklauseln abgesichert (Art. 46 Abs. 2 lit. c DSGVO, Durchführungsbeschluss (EU) 2021/914), die wir mit den Anbietern vereinbart haben. Zusätzlich sind beide Anbieter vertraglich als Auftragsverarbeiter nach Art. 28 DSGVO an unsere Weisungen gebunden.</p>
+<p>Nutzt du die Anmeldung mit Apple, findet auch dort eine Verarbeitung durch ein US-Unternehmen statt. Apple handelt dabei in eigener Verantwortung; Grundlage und Garantien richten sich nach Apples Datenschutzerklärung. Du kannst diesen Weg vermeiden, indem du die App ohne Konto startest (Ziffer 4.1 a).</p>
 <p>Trotz dieser Garantien lässt sich nicht vollständig ausschließen, dass US-Behörden auf Grundlage dortiger Gesetze Zugriff auf Daten verlangen. Ein den europäischen Standards vollständig entsprechendes Schutzniveau kann für solche Zugriffe nicht garantiert werden. Wenn du das vermeiden möchtest, nutze die App ohne die Online-Funktionen: Der gesamte Lernbetrieb funktioniert offline (siehe Ziffern 2 und 3), und die Cloud-Sicherung ist freiwillig.</p>
 <p>Eine über die genannten Dienstleister hinausgehende Weitergabe an Dritte findet nicht statt, es sei denn, wir sind gesetzlich dazu verpflichtet.</p>
 <h2>7. SPEICHERDAUER</h2>
