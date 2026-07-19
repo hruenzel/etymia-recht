@@ -49,14 +49,16 @@ body {
 a { color: var(--akzent); }
 .innen { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
 
-h1, h2 { font-family: var(--serif); font-weight: 550; color: var(--text); }
-h1 { font-size: clamp(40px, 6vw, 64px); line-height: 1.06; letter-spacing: -1px; }
-h2 { font-size: clamp(28px, 4vw, 40px); line-height: 1.15; letter-spacing: -0.5px; }
+/* Typografie bewusst zurückgenommen (Feedback Henry + UX-Praxis:
+   Serif nur groß, wenige Gewichte, Hierarchie nicht überziehen). */
+h1, h2 { font-family: var(--serif); font-weight: 500; color: var(--text); }
+h1 { font-size: clamp(36px, 5.5vw, 54px); line-height: 1.08; letter-spacing: -0.6px; }
+h2 { font-size: clamp(25px, 3.4vw, 33px); line-height: 1.18; letter-spacing: -0.3px; }
 .kicker {
-  font-size: 12.5px; font-weight: 800; letter-spacing: 2.2px;
-  text-transform: uppercase; color: var(--akzent); margin-bottom: 12px;
+  font-size: 11.5px; font-weight: 700; letter-spacing: 1.8px;
+  text-transform: uppercase; color: var(--akzent); margin-bottom: 10px;
 }
-.lead { font-size: clamp(17px, 2vw, 19px); }
+.lead { font-size: clamp(16.5px, 2vw, 18px); }
 
 /* ---------- Navigation ---------- */
 nav {
@@ -73,8 +75,8 @@ nav.fest {
   box-shadow: 0 1px 0 var(--linie);
 }
 .marke {
-  font-family: var(--serif); font-size: 23px; font-weight: 600;
-  color: #fff; text-decoration: none; letter-spacing: -0.3px;
+  font-family: var(--serif); font-size: 20px; font-weight: 600;
+  color: #fff; text-decoration: none; letter-spacing: -0.2px;
 }
 .marke b { color: #7CF0C9; }
 nav.fest .marke { color: var(--text); }
@@ -112,10 +114,10 @@ nav.fest .nav-links a { color: var(--sub); }
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); gap: 48px;
 }
 .eyebrow {
-  display: inline-block; font-size: 12.5px; font-weight: 700;
-  letter-spacing: 1.6px; text-transform: uppercase;
+  display: inline-block; font-size: 11.5px; font-weight: 600;
+  letter-spacing: 1.2px; text-transform: uppercase;
   background: rgba(255,255,255,0.13); border: 1px solid rgba(255,255,255,0.24);
-  border-radius: 999px; padding: 7px 15px; margin-bottom: 24px;
+  border-radius: 999px; padding: 6px 14px; margin-bottom: 22px;
 }
 .hero h1 { color: #fff; margin-bottom: 20px; }
 .hero .lead { color: rgba(255,255,255,0.85); max-width: 480px; margin-bottom: 32px; }
@@ -132,98 +134,82 @@ nav.fest .nav-links a { color: var(--sub); }
 .cta-voll:hover { transform: translateY(-1px); filter: brightness(1.06); }
 .cta-zart { color: #fff; border: 1.5px solid rgba(255,255,255,0.4); }
 .cta-zart:hover { border-color: #fff; }
-.trust {
-  margin-top: 26px; font-size: 13.5px; color: rgba(255,255,255,0.62);
-  letter-spacing: 0.2px;
+/* Zahlen-Leiste: belegbare Fakten statt bloßer Behauptungen.
+   3.000+ = einzigartige Wörter über die Vokabel-CSVs (nachgezählt). */
+.zahlen { display: flex; gap: clamp(24px, 4vw, 44px); margin-top: 34px; }
+.zahlen b {
+  display: block; font-family: var(--serif); font-weight: 500;
+  font-size: 24px; color: #fff; line-height: 1.2;
 }
+.zahlen span { font-size: 12.5px; color: rgba(255,255,255,0.62); }
 
-/* ---------- Telefon-Replika ---------- */
+/* ---------- Hero-Collage: schwebende UI-Karten aus der App ----------
+   Statt eines Geräterahmens (wirkt schnell nach Stock-Mockup) zeigen
+   drei echte App-Bausteine das Produkt. Immer im Dunkel-Look – wie
+   ein Produktfoto, funktioniert auf Indigo in beiden Farbschemata. */
 .buehne { position: relative; display: flex; justify-content: center; }
 .buehne::before, .buehne::after {
   content: ""; position: absolute; border-radius: 50%;
   filter: blur(70px); pointer-events: none;
 }
 .buehne::before {
-  width: 340px; height: 340px; background: rgba(53,199,232,0.35);
-  top: -30px; left: 6%;
+  width: 320px; height: 320px; background: rgba(53,199,232,0.32);
+  top: -20px; left: 8%;
 }
 .buehne::after {
-  width: 300px; height: 300px; background: rgba(168,85,247,0.3);
-  bottom: -30px; right: 4%;
+  width: 280px; height: 280px; background: rgba(168,85,247,0.28);
+  bottom: -20px; right: 6%;
 }
-.telefon {
-  position: relative; z-index: 1; width: 296px;
-  background: #0E1424; border: 9px solid #060A15;
-  border-radius: 46px; padding: 14px 15px 0; overflow: hidden;
-  height: 596px; box-shadow: 0 40px 80px -30px rgba(0,0,0,0.6);
-  transform: rotate(-4deg);
-  animation: schweben 7s ease-in-out infinite;
-  font-size: 12px; color: #AAB3C7; line-height: 1.4;
+.collage { position: relative; z-index: 1; width: 430px; max-width: 100%;
+  height: 420px; }
+.ui-karte {
+  position: absolute; background: #17203A; border: 1px solid #2A3556;
+  border-radius: 18px; padding: 18px 20px; color: #AAB3C7;
+  box-shadow: 0 30px 60px -25px rgba(0,0,0,0.55);
+  font-size: 13px; line-height: 1.5;
 }
+.uk-wort { top: 46px; left: 0; width: 320px; transform: rotate(-2deg);
+  animation: schweben 7s ease-in-out infinite; }
+.uk-streak { top: 0; right: 0; width: 200px; transform: rotate(2.5deg);
+  animation: schweben 8s ease-in-out 0.8s infinite; }
+.uk-duell { bottom: 24px; right: 14px; width: 250px; transform: rotate(-1.5deg);
+  animation: schweben 7.5s ease-in-out 1.6s infinite; }
 @keyframes schweben {
-  0%, 100% { transform: rotate(-4deg) translateY(0); }
-  50% { transform: rotate(-4deg) translateY(-10px); }
+  0%, 100% { translate: 0 0; } 50% { translate: 0 -9px; }
 }
-.insel {
-  width: 84px; height: 24px; background: #060A15;
-  border-radius: 999px; margin: 0 auto 14px;
-}
-.p-gruss { color: #8E97AD; font-size: 11.5px; }
-.p-titel { color: #35C7E8; font-size: 16.5px; font-weight: 800; letter-spacing: -0.2px; }
-.p-kopf { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
-.p-rund {
-  width: 32px; height: 32px; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-}
-.p-rund svg { width: 15px; height: 15px; }
-.p-chips { display: flex; gap: 9px; margin-bottom: 16px; }
-.p-chip {
-  flex: 1; display: flex; align-items: center; justify-content: center;
-  gap: 5px; padding: 8px 6px; border-radius: 13px;
-  font-weight: 700; font-size: 12px;
-}
-.p-chip svg { width: 14px; height: 14px; }
-.p-muenzen { background: rgba(255,193,7,0.15); border: 1px solid rgba(255,193,7,0.5); color: #FFC107; }
-.p-streak { background: rgba(255,152,0,0.15); border: 1px solid rgba(255,152,0,0.5); color: #FF9800; }
-.p-flamme { animation: flackern 2.4s ease-in-out infinite; transform-origin: 50% 85%; }
+.uk-kicker { color: #35C7E8; font-size: 10px; font-weight: 700;
+  letter-spacing: 1.6px; margin-bottom: 10px; }
+.uk-wortzeile { display: flex; align-items: center; gap: 9px; margin-bottom: 7px; }
+.uk-wortzeile .wort { color: #EFF2FA; font-size: 23px; font-weight: 700;
+  letter-spacing: -0.4px; }
+.uk-tag { background: rgba(53,199,232,0.16); color: #35C7E8; font-size: 9.5px;
+  font-weight: 700; letter-spacing: 1px; border-radius: 6px; padding: 3px 8px; }
+.uk-laut { margin-left: auto; color: #35C7E8; width: 18px; flex-shrink: 0; }
+.uk-laut svg { width: 18px; height: 18px; }
+.uk-streak-kopf { display: flex; align-items: center; gap: 9px;
+  color: #FF9800; font-weight: 700; font-size: 15px; }
+.uk-streak-kopf svg { width: 21px; height: 21px; }
+.uk-flamme { animation: flackern 2.4s ease-in-out infinite;
+  transform-origin: 50% 85%; width: 21px; height: 21px; }
 @keyframes flackern {
   0%, 100% { transform: scale(1); } 40% { transform: scale(1.12) rotate(-3deg); }
   70% { transform: scale(0.96) rotate(2deg); }
 }
-.p-label { color: #626C84; font-size: 9px; font-weight: 800; letter-spacing: 1.8px; margin-bottom: 8px; }
-.p-karte {
-  background: #17203A; border: 1px solid #232D47; border-radius: 15px;
-  padding: 12px 13px; margin-bottom: 12px;
+.uk-woche { display: flex; gap: 6px; margin-top: 12px; }
+.uk-woche i {
+  flex: 1; height: 5px; border-radius: 99px; background: #2A3556;
 }
-.p-kicker { color: #35C7E8; font-size: 8px; font-weight: 800; letter-spacing: 1.8px; margin-bottom: 6px; }
-.p-wort-zeile { display: flex; align-items: center; gap: 7px; margin-bottom: 5px; }
-.p-wort { color: #EFF2FA; font-size: 19px; font-weight: 800; letter-spacing: -0.4px; }
-.p-tag {
-  background: #35C7E8; color: #0E1424; font-size: 7.5px; font-weight: 800;
-  letter-spacing: 0.8px; border-radius: 5px; padding: 2px 6px;
-}
-.p-def { color: #AAB3C7; font-size: 9.5px; line-height: 1.45; }
-.p-zeile { display: flex; align-items: center; gap: 9px; padding: 10px 12px; }
-.p-zeile + .p-zeile { border-top: 1px solid #232D47; }
-.p-icon {
-  width: 30px; height: 30px; border-radius: 10px; flex-shrink: 0;
+.uk-woche i.an { background: #FF9800; }
+.uk-duell-innen { display: flex; align-items: center; gap: 14px;
+  justify-content: center; }
+.uk-avatar { width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
   display: flex; align-items: center; justify-content: center;
-}
-.p-icon svg { width: 14px; height: 14px; }
-.p-zt { color: #EFF2FA; font-size: 11px; font-weight: 700; }
-.p-zs { color: #8E97AD; font-size: 9px; }
-.p-neu {
-  margin-left: auto; background: #F2555A; color: #0E1424;
-  font-size: 7.5px; font-weight: 800; letter-spacing: 0.5px;
-  border-radius: 999px; padding: 2.5px 7px;
-}
-.p-chevron { margin-left: auto; color: #626C84; }
-.p-spiele { display: flex; gap: 9px; }
-.p-tile {
-  flex: 1; height: 64px; border-radius: 15px 15px 0 0; padding: 10px;
-  font-size: 9.5px; font-weight: 700; color: #EFF2FA;
-}
-.p-tile svg { width: 14px; height: 14px; display: block; margin-bottom: 5px; }
+  font-size: 13px; font-weight: 800; color: #fff; }
+.uk-stand { text-align: center; }
+.uk-stand b { display: block; font-family: var(--serif); font-weight: 500;
+  font-size: 24px; color: #EFF2FA; letter-spacing: 1px; line-height: 1.1; }
+.uk-stand span { font-size: 9.5px; font-weight: 700; letter-spacing: 1.2px;
+  color: #8E97AD; }
 
 /* ---------- Sektionen ---------- */
 section { padding: 104px 0 0; scroll-margin-top: 56px; }
@@ -253,8 +239,8 @@ section { padding: 104px 0 0; scroll-margin-top: 56px; }
 }
 .quiz-wortzeile { display: flex; align-items: baseline; gap: 12px;
   flex-wrap: wrap; margin-bottom: 6px; }
-.quiz-wort { font-family: var(--serif); font-weight: 600;
-  font-size: clamp(30px, 5vw, 40px); color: var(--text); letter-spacing: -0.5px; }
+.quiz-wort { font-family: var(--serif); font-weight: 500;
+  font-size: clamp(26px, 4vw, 32px); color: var(--text); letter-spacing: -0.3px; }
 .quiz-tagpill {
   background: color-mix(in srgb, var(--cyan) 16%, transparent);
   color: var(--cyan); font-size: 10.5px; font-weight: 800;
@@ -294,7 +280,7 @@ section { padding: 104px 0 0; scroll-margin-top: 56px; }
 }
 .quiz-ende { display: none; text-align: center; padding: 18px 0 6px; }
 .quiz-ende .gross {
-  font-family: var(--serif); font-size: 56px; font-weight: 600;
+  font-family: var(--serif); font-size: 42px; font-weight: 500;
   color: var(--text); line-height: 1;
 }
 .quiz-ende .urteil { color: var(--text); font-weight: 700; font-size: 18px;
@@ -346,13 +332,14 @@ section { padding: 104px 0 0; scroll-margin-top: 56px; }
   display: flex; align-items: center; justify-content: center;
   font-size: 10.5px; font-weight: 800; color: #fff; }
 .liga-troph { margin-left: auto; font-weight: 700; font-size: 12px;
-  color: var(--amber); }
+  color: var(--amber); display: flex; align-items: center; gap: 4px; }
+.liga-troph svg { width: 12px; height: 12px; }
 .duell-mini { display: flex; align-items: center; justify-content: center;
   gap: 18px; padding: 18px 8px; }
 .duell-avatar { width: 46px; height: 46px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   font-size: 15px; font-weight: 800; color: #fff; }
-.duell-stand { font-family: var(--serif); font-size: 30px; font-weight: 600;
+.duell-stand { font-family: var(--serif); font-size: 24px; font-weight: 500;
   color: var(--text); letter-spacing: 1px; }
 .duell-vs { font-size: 10px; font-weight: 800; letter-spacing: 1.5px;
   color: var(--muted); text-align: center; margin-top: 3px; }
@@ -432,7 +419,7 @@ details[open] summary::after { transform: rotate(45deg); }
 footer { padding: 64px 0 48px; }
 .fuss-oben { display: flex; align-items: baseline; gap: 14px;
   flex-wrap: wrap; padding-bottom: 22px; }
-.fuss-marke { font-family: var(--serif); font-size: 22px; font-weight: 600;
+.fuss-marke { font-family: var(--serif); font-size: 19px; font-weight: 600;
   color: var(--text); }
 .fuss-claim { font-size: 14px; }
 .fuss-unten {
@@ -446,16 +433,15 @@ footer { padding: 64px 0 48px; }
 /* ---------- Responsiv & Motion ---------- */
 @media (max-width: 860px) {
   .hero { padding: 108px 0 72px; }
-  .hero .innen { grid-template-columns: 1fr; gap: 56px; }
-  .telefon { transform: rotate(0deg); height: 540px; width: 272px; }
-  @keyframes schweben {
-    0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); }
-  }
+  .hero .innen { grid-template-columns: 1fr; gap: 52px; }
+  .collage { height: 380px; margin: 0 auto; }
+  .uk-wort { width: min(320px, 82%); }
+  .zahlen b { font-size: 21px; }
   section { padding-top: 72px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .telefon, .p-flamme { animation: none; }
+  .ui-karte, .uk-flamme { animation: none; }
   .js .zeigen { opacity: 1; transform: none; transition: none; }
   .bento > *:hover, .cta-voll:hover { transform: none; }
 }
@@ -488,53 +474,34 @@ Wortschatz messbar wachsen lassen.</p>
 <a class="cta cta-voll" href="mailto:support@lexant.de?subject=Beta-Test%20Lexant">Beta-Platz sichern</a>
 <a class="cta cta-zart" href="#quiz">Erst mal ausprobieren&nbsp;↓</a>
 </div>
-<p class="trust">Kostenlos &middot; Ohne Konto-Zwang &middot; iOS zuerst</p>
+<div class="zahlen">
+<div><b>3.000+</b><span>Wörter &amp; Bedeutungen</span></div>
+<div><b>6</b><span>Spielmodi</span></div>
+<div><b>0&nbsp;€</b><span>kostenlos, ohne Käufe</span></div>
+</div>
 </div>
 <div class="buehne zeigen">
-<div class="telefon" role="img" aria-label="Der Home-Screen der Lexant-App">
-<div class="insel"></div>
-<div class="p-kopf">
-<div>
-<div class="p-gruss">Hallo Alex,</div>
-<div class="p-titel">Bereit fürs Training?</div>
+<div class="collage" role="img" aria-label="Bausteine der Lexant-App: Wort des Tages, Lern-Streak und ein laufendes Duell">
+<div class="ui-karte uk-streak">
+<div class="uk-streak-kopf"><span class="uk-flamme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c1 3-3 4.5-3 8a3 3 0 0 0 6 .5C16.5 13 18 11 17 8c2 1.5 3.5 4 3.5 7A8.5 8.5 0 0 1 12 21a8 8 0 0 1-8-6c0-4 3-5.5 4-8 .8 1.3 1.6 2 2.6 2.6C10.2 7.6 11 5.5 12 3z"/></svg></span> 12 Tage Streak</div>
+<div class="uk-woche"><i class="an"></i><i class="an"></i><i class="an"></i><i class="an"></i><i class="an"></i><i></i><i></i></div>
 </div>
-<div style="display:flex;gap:7px">
-<div class="p-rund" style="background:rgba(255,193,7,0.15);border:1px solid rgba(255,193,7,0.5);color:#FFC107"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.8-4.5 4.2 1.1 6-5.4-2.9L6.6 19.6l1.1-6L3.2 9.4l6.1-.8z"/></svg></div>
-<div class="p-rund" style="background:rgba(52,201,142,0.15);border:1px solid rgba(52,201,142,0.5);color:#34C98E"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></div>
+<div class="ui-karte uk-wort">
+<div class="uk-kicker">WORT DES TAGES</div>
+<div class="uk-wortzeile">
+<span class="wort">Diskrepanz</span>
+<span class="uk-tag">SUBSTANTIV</span>
+<span class="uk-laut"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9zM16.5 8.5a5 5 0 0 1 0 7"/></svg></span>
 </div>
+Ein Widerspruch oder eine Unstimmigkeit zwischen mehreren Dingen.
 </div>
-<div class="p-chips">
-<div class="p-chip p-muenzen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/></svg> 1.250 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 8.5v7M8.5 12h7"/></svg></div>
-<div class="p-chip p-streak"><span class="p-flamme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c1 3-3 4.5-3 8a3 3 0 0 0 6 .5C16.5 13 18 11 17 8c2 1.5 3.5 4 3.5 7A8.5 8.5 0 0 1 12 21a8 8 0 0 1-8-6c0-4 3-5.5 4-8 .8 1.3 1.6 2 2.6 2.6C10.2 7.6 11 5.5 12 3z"/></svg></span> 12 Tage</div>
+<div class="ui-karte uk-duell">
+<div class="uk-kicker" style="text-align:center">DUELL GEGEN LENA</div>
+<div class="uk-duell-innen">
+<span class="uk-avatar" style="background:linear-gradient(140deg,#34C98E,#0FA7CC)">DU</span>
+<span class="uk-stand"><b>3 : 2</b><span>RUNDE 5 VON 6</span></span>
+<span class="uk-avatar" style="background:linear-gradient(140deg,#F2555A,#A855F7)">LK</span>
 </div>
-<div class="p-label">FÜR HEUTE</div>
-<div class="p-karte">
-<div class="p-kicker">WORT DES TAGES</div>
-<div class="p-wort-zeile">
-<span class="p-wort">Akribie</span>
-<span class="p-tag">SUBSTANTIV</span>
-<span style="margin-left:auto;color:#35C7E8;width:15px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9zM16.5 8.5a5 5 0 0 1 0 7"/></svg></span>
-</div>
-<div class="p-def">Genaue und sorgfältige Arbeitsweise, die auf höchste Präzision und Detailtreue achtet.</div>
-</div>
-<div class="p-karte" style="padding:0">
-<div class="p-zeile">
-<div class="p-icon" style="background:rgba(242,85,90,0.14);color:#F2555A"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4M9 15.5l2 2 4-4"/></svg></div>
-<div><div class="p-zt">Tägliche Mission</div>
-<div class="p-zs">10 Wörter · Bonus-Belohnung</div></div>
-<span class="p-neu">NEU</span>
-</div>
-<div class="p-zeile">
-<div class="p-icon" style="background:rgba(52,201,142,0.14);color:#34C98E"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.3-5.6M20 4v4h-4"/></svg></div>
-<div><div class="p-zt">Wiederholen</div>
-<div class="p-zs">3 Wörter fällig</div></div>
-<span class="p-chevron" style="width:16px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
-</div>
-</div>
-<div class="p-label">SPIELE</div>
-<div class="p-spiele">
-<div class="p-tile" style="background:linear-gradient(150deg,#4152D8,#283079)"><span style="color:#8fd8ff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v5a4 4 0 0 1-8 0z"/><path d="M8 5H5a3 3 0 0 0 3 5M16 5h3a3 3 0 0 1-3 5"/><path d="M12 13v4M8 21h8M10 17h4"/></svg></span>Liga der Denker</div>
-<div class="p-tile" style="background:linear-gradient(150deg,#7c3aed,#4c1d95)"><span style="color:#d8b4fe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L5 13h6l-1 9 8-11h-6z"/></svg></span>Arcade</div>
 </div>
 </div>
 </div>
@@ -582,9 +549,9 @@ Stimmung gibt es den passenden Modus.</p>
 <div class="bento">
 <article class="b-liga zeigen">
 <div class="mini">
-<div class="liga-zeile"><span>1</span><span class="liga-avatar" style="background:linear-gradient(140deg,#35C7E8,#4152D8)">MK</span>Mara K.<span class="liga-troph">🏆 412</span></div>
-<div class="liga-zeile ich"><span>2</span><span class="liga-avatar" style="background:linear-gradient(140deg,#34C98E,#0FA7CC)">DU</span>Du<span class="liga-troph">🏆 398</span></div>
-<div class="liga-zeile"><span>3</span><span class="liga-avatar" style="background:linear-gradient(140deg,#8F7CF0,#A855F7)">JT</span>Jonas T.<span class="liga-troph">🏆 371</span></div>
+<div class="liga-zeile"><span>1</span><span class="liga-avatar" style="background:linear-gradient(140deg,#35C7E8,#4152D8)">MK</span>Mara K.<span class="liga-troph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v5a4 4 0 0 1-8 0z"/><path d="M8 5H5a3 3 0 0 0 3 5M16 5h3a3 3 0 0 1-3 5"/><path d="M12 13v4M8 21h8M10 17h4"/></svg> 412</span></div>
+<div class="liga-zeile ich"><span>2</span><span class="liga-avatar" style="background:linear-gradient(140deg,#34C98E,#0FA7CC)">DU</span>Du<span class="liga-troph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v5a4 4 0 0 1-8 0z"/><path d="M8 5H5a3 3 0 0 0 3 5M16 5h3a3 3 0 0 1-3 5"/><path d="M12 13v4M8 21h8M10 17h4"/></svg> 398</span></div>
+<div class="liga-zeile"><span>3</span><span class="liga-avatar" style="background:linear-gradient(140deg,#8F7CF0,#A855F7)">JT</span>Jonas T.<span class="liga-troph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v5a4 4 0 0 1-8 0z"/><path d="M8 5H5a3 3 0 0 0 3 5M16 5h3a3 3 0 0 1-3 5"/><path d="M12 13v4M8 21h8M10 17h4"/></svg> 371</span></div>
 </div>
 <h3>Liga der Denker</h3>
 <p>Jeden Monat eine neue Saison. Sammle Trophäen, steig auf, verteidige
@@ -683,7 +650,7 @@ anderen holt dich zurück, wenn die Motivation nachlässt.</p>
 </div>
 <div class="faq-liste zeigen">
 <details><summary>Kostet Lexant etwas?</summary><p class="faq-text">Nein. Lexant ist kostenlos. Münzen verdienst du dir durchs Spielen – es gibt keine Käufe in der App.</p></details>
-<details><summary>Welche Daten speichert Lexant?</summary><p class="faq-text">So wenig wie möglich. Du spielst mit einem anonymen Konto, eine E-Mail-Adresse ist nur für die freiwillige Konto-Sicherung nötig. Alle Details stehen in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p></details>
+<details><summary>Was macht Lexant anders als Duolingo & Co.?</summary><p class="faq-text">Die bekannten Apps bringen dir Fremdsprachen bei. Lexant trainiert deinen <em>deutschen</em> Wortschatz – für alle, die sich präziser ausdrücken wollen. Dazu kommt echter Wettbewerb: Ligen, Duelle und Ranglisten gegen echte Menschen statt gegen ein Maskottchen.</p></details>
 <details><summary>Für wen ist Lexant?</summary><p class="faq-text">Für alle, die präziser sprechen und schreiben wollen – ob für Schule, Studium, Beruf oder einfach aus Freude an Sprache.</p></details>
 <details><summary>Wann kann ich Lexant laden?</summary><p class="faq-text">Lexant ist aktuell in der geschlossenen Beta für iOS. Der App-Store-Start wird hier auf der Seite angekündigt.</p></details>
 <details><summary>Kommt Lexant auch für Android?</summary><p class="faq-text">Ja, das ist geplant – iOS kommt zuerst, Android folgt nach dem Start.</p></details>
