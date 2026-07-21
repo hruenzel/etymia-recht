@@ -75,7 +75,8 @@ footer { margin-top: 48px; color: var(--muted); font-size: 13px;
 <p>a) Ohne Konto starten (anonym)</p>
 <p>Die App legt ein anonymes Konto an. Dabei entsteht nur eine zufällige Kennnummer (UUID) ohne Bezug zu deiner Person, deinem Namen oder deiner Gerätekennung.</p>
 <p>Verarbeitete Daten: zufällige Konto-ID, Erstellungszeitpunkt sowie die technisch bei jeder Verbindung anfallende IP-Adresse.</p>
-<p>b) Anmeldung mit Apple</p>
+<p>b) Anmeldung mit Apple (nur iOS-Version)</p>
+<p>Diese Möglichkeit besteht nur in der iOS-Version der App. In der Android-Version stehen dir der anonyme Start und die freiwillige E-Mail-Sicherung (Ziffer 4.2) zur Verfügung.</p>
 <p>Meldest du dich mit Apple an, bestätigt Apple uns gegenüber deine Identität und übermittelt uns eine dauerhafte Kennnummer sowie deine E-Mail-Adresse. Dein Fortschritt bleibt dadurch auch bei einem Gerätewechsel erhalten.</p>
 <p>Du entscheidest dabei selbst, ob wir deine echte E-Mail-Adresse erhalten: Wählst du in Apples Dialog "E-Mail-Adresse verbergen", bekommen wir nur eine Weiterleitungsadresse von Apple (@privaterelay.appleid.com). Deinen Namen fragen wir bei Apple nicht ab – deinen Anzeigenamen wählst du im nächsten Schritt selbst.</p>
 <p>Verarbeitete Daten: Apple-Kennnummer, E-Mail-Adresse (ggf. als Weiterleitungsadresse), Zeitpunkt der Anmeldung, IP-Adresse.</p>
@@ -109,7 +110,8 @@ footer { margin-top: 48px; color: var(--muted); font-size: 13px;
 <p>Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse liegt in der Stabilität und Fehlerfreiheit der App.</p>
 <h3>4.9 Mitteilungen</h3>
 <p>Die täglichen Wortfakten-Erinnerungen werden lokal auf deinem Gerät geplant und ausgelöst. Dabei findet keine Übertragung an uns statt.</p>
-<p>Für Hinweise zu laufenden Duellen („Du bist dran") nutzen wir zusätzlich Push-Mitteilungen. Erteilst du die Mitteilungs-Erlaubnis, stellt dir Apple eine Gerätekennung (Push-Token) aus, die wir zusammen mit deiner Konto-Kennung auf unserem Server speichern; nur so können wir eine Mitteilung an das richtige Gerät adressieren. Die Zustellung selbst erfolgt über den Push-Dienst von Apple (Apple Push Notification service). Der Inhalt beschränkt sich auf den Hinweis, dass du am Zug bist, und den Anzeigenamen deines Gegenübers.</p>
+<p>Für Hinweise zu laufenden Duellen („Du bist dran") nutzen wir zusätzlich Push-Mitteilungen. Diese gibt es derzeit nur in der iOS-Version; die täglichen Wortfakten oben erhältst du auf beiden Plattformen.</p>
+<p>Erteilst du die Mitteilungs-Erlaubnis, stellt dir Apple eine Gerätekennung (Push-Token) aus, die wir zusammen mit deiner Konto-Kennung auf unserem Server speichern; nur so können wir eine Mitteilung an das richtige Gerät adressieren. Die Zustellung selbst erfolgt über den Push-Dienst von Apple (Apple Push Notification service). Der Inhalt beschränkt sich auf den Hinweis, dass du am Zug bist, und den Anzeigenamen deines Gegenübers.</p>
 <p>Du erteilst die Erlaubnis freiwillig und kannst sie jederzeit in den Einstellungen der App oder deines Geräts widerrufen. Widerrufst du sie oder löschst du dein Konto, entfernen wir das Token. Ungültig gewordene Token (z. B. nach Deinstallation) löschen wir automatisch.</p>
 <p>Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung), widerruflich mit Wirkung für die Zukunft.</p>
 <h3>4.10 Vorlesefunktion</h3>
@@ -118,10 +120,13 @@ footer { margin-top: 48px; color: var(--muted); font-size: 13px;
 <p>Nutzt du das Kontaktformular, öffnet die App dein E-Mail-Programm mit einer vorbereiteten Nachricht. Der Versand erfolgt über deinen eigenen E-Mail-Anbieter. Wir verarbeiten die von dir übermittelten Angaben (Name, E-Mail-Adresse, Nachricht) ausschließlich zur Bearbeitung deiner Anfrage.</p>
 <p>Rechtsgrundlage: Art. 6 Abs. 1 lit. b bzw. lit. f DSGVO.</p>
 <h2>5. EMPFÄNGER UND AUFTRAGSVERARBEITER</h2>
-<p>Wir geben Daten nur an sorgfältig ausgewählte Dienstleister weiter, die für uns als Auftragsverarbeiter nach Art. 28 DSGVO tätig sind und vertraglich an unsere Weisungen gebunden sind:</p>
+<p>Wir geben Daten nur an sorgfältig ausgewählte Empfänger weiter. Dabei sind zwei Rollen zu unterscheiden.</p>
+<p>Als Auftragsverarbeiter nach Art. 28 DSGVO – vertraglich an unsere Weisungen gebunden – sind für uns tätig:</p>
 <p>(a) Supabase, Inc. – Betrieb der Datenbank, der Konten und der Online- Funktionen (Ziffern 4.1 bis 4.7). Speicherort: Frankfurt am Main, Deutschland (Europäische Union).</p>
 <p>(b) Functional Software, Inc. (Sentry) – Absturz- und Fehlerberichte (Ziffer 4.8). Speicherort: Frankfurt am Main, Deutschland (Europäische Union).</p>
-<p>(c) Apple – Bereitstellung der App über den App Store, die Anmeldung mit Apple (Ziffer 4.1 b), falls du sie nutzt, sowie die Zustellung von Push-Mitteilungen über den Apple Push Notification service (Ziffer 4.9), falls du Mitteilungen erlaubst. Apple verarbeitet diese Daten in eigener Verantwortung nach den Bestimmungen von Apple und ist insoweit nicht unser Auftragsverarbeiter.</p>
+<p>Daneben sind die folgenden Stellen beteiligt, die die bei ihnen anfallenden Daten in eigener Verantwortung verarbeiten und gerade nicht unsere Auftragsverarbeiter sind:</p>
+<p>(c) Apple – Bereitstellung der iOS-Version über den App Store, die Anmeldung mit Apple (Ziffer 4.1 b), falls du sie nutzt, sowie die Zustellung von Push-Mitteilungen über den Apple Push Notification service (Ziffer 4.9), falls du Mitteilungen erlaubst. Apple verarbeitet diese Daten in eigener Verantwortung nach den Bestimmungen von Apple und ist insoweit nicht unser Auftragsverarbeiter.</p>
+<p>(d) Google – Bereitstellung der Android-Version über Google Play. Google verarbeitet die dabei anfallenden Daten (etwa zu Download, Konto und Abrechnung) in eigener Verantwortung nach den Bestimmungen von Google und ist insoweit nicht unser Auftragsverarbeiter. Wir setzen in der Android-Version bewusst keine Google-Dienste innerhalb der App ein – insbesondere kein Firebase und keinen Google-Analysedienst.</p>
 <p>Für Supabase und Sentry haben wir bewusst europäische Serverstandorte gewählt. Deine Spiel- und Kontodaten werden daher in Frankfurt am Main gespeichert und dort auch überwiegend verarbeitet.</p>
 <h2>6. ÜBERMITTLUNG IN DRITTLÄNDER</h2>
 <p>Vollständig ausschließen können wir eine Verarbeitung außerhalb der EU dennoch nicht, und wir wollen an dieser Stelle ehrlich sein: Supabase und Sentry sind US-amerikanische Unternehmen und setzen ihrerseits Unterauftragsverarbeiter ein, die überwiegend in den USA ansässig sind – darunter Amazon Web Services, Google, Cloudflare und Postmark (Versand der Anmelde-E-Mails aus Ziffer 4.2). Im Rahmen von Wartung, Support und Störungsbehebung kann es daher zu einem Zugriff aus einem Drittland kommen.</p>
